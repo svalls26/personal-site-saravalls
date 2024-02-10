@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sara Valls - Just A Girl In Tech</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        #sliderContainer {
+            display: flex; /* Ensures slides are in a row */
+        }
+        .slide {
+            flex: 0 0 100%; /* Each slide takes full width of the viewport */
+            max-width: 100%; /* Ensures slides do not overflow their container */
+        }
+    </style>
 </head>
 <body class="font-sans bg-gray-50">
     <header class="bg-white shadow">
@@ -20,10 +29,11 @@
         <div class="flex flex-col md:flex-row justify-center items-center text-center pt-32 mb-32">
             <div class="md:w-1/2 mt-12 md:mt-20">
                 <h2 class="text-4xl font-semibold mb-4">Hi! I'm Sara, Just a Girl in Tech</h2>
-                <p class="text-gray-700 mb-8">Hey, thank you for visiting my website! My name is Sara and I'm just a girl in Tech. I'm from Spain, but currently living in Switzerland and working as a Data Engineer. If you want to know me a little bit better, keep scrolling!</p>
-                <div class="flex justify-center md:justify-center">
-                    <button class="bg-black text-white py-2 px-4 rounded">View CV</button>
-                </div>
+                <p class="text-gray-700 mb-8">Thanks you for visiting my website! My name is Sara and I'm just a girl in Tech. I'm from Spain, but currently living in Switzerland and working as a Data Engineer. If you want to know me a little bit better, keep scrolling!</p>
+        <div class="flex justify-center md:justify-center">
+            <!-- Add an ID to your button -->
+            <button id="viewCVButton" class="bg-black text-white py-2 px-4 rounded">View CV</button>
+        </div>
             </div>
             <div class="md:w-1/2 flex justify-center md:justify-center self-end">
                 <img src="me.png" alt="Sara" class="rounded-full shadow-lg" style="width: 300px; height: 300px; object-fit: cover;">
@@ -31,14 +41,25 @@
         </div>
         <!-- Slider Controls -->
         <section class="mb-20 p-10 bg-gray-100 rounded-lg shadow relative overflow-hidden">
-            <div class="absolute inset-y-0 left-0 flex items-center z-10">
-                <button id="slideLeft" class="py-2 px-4 bg-gray-200 rounded-r-lg">←</button>
-            </div>
-            <div class="absolute inset-y-0 right-0 flex items-center z-10">
-                <button id="slideRight" class="py-2 px-4 bg-gray-200 rounded-l-lg">→</button>
-            </div>
             <div id="sliderContainer" class="flex overflow-hidden">
                 <!-- First Slide -->
+                <div class="slide min-w-full flex-none align-middle text-center">
+                    <h3 class="text-3xl font-semibold mb-6">Top 3 things I absolutely love</h3>
+                    <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12">
+                        <div class="rounded-lg overflow-hidden">
+                            <img src="mac.jpg" alt="Match and Brunch" class="object-cover h-48 w-72 md:w-64 md:h-64 rounded-full">
+                            <p class="text-xl mt-2">Matcha Latte</p>
+                        </div>
+                        <div class="rounded-lg overflow-hidden">
+                            <img src="swiss.png" alt="Running around Geneva lake" class="object-cover h-48 w-72 md:w-64 md:h-64 rounded-full">
+                            <p class="text-xl mt-2">Running around Geneva lake</p>
+                        </div>
+                        <div class="rounded-lg overflow-hidden">
+                            <img src="obi.png" alt="My dog Obi" class="object-cover h-48 w-72 md:w-64 md:h-64 rounded-full">
+                            <p class="text-xl mt-2">My dog Obi</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="slide min-w-full flex-none align-middle text-center">
                     <h3 class="text-3xl font-semibold mb-6">Top 3 things I absolutely love</h3>
                     <div class="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-12">
@@ -56,56 +77,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="slide min-w-full flex-none align-middle">
-                    <div class="flex flex-col md:flex-row justify-center items-center h-full">
-                        <!-- Text on the left -->
-                        <div class="md:w-1/2 text-center md:text-left p-4">
-                            <h3 class="text-3xl font-semibold mb-6">Currently Reading</h3>
-                            <p class="text-xl mb-4">Here's a brief description of the book. It's a fascinating read that dives into the complexities of technology and its impact on our daily lives.</p>
-                        </div>
-                        <!-- Square image of the book on the right -->
-                        <div class="md:w-1/2 flex justify-center md:justify-end p-4">
-                            <img src="path_to_your_book_image.jpg" alt="Book Title" class="object-cover h-64 w-64 rounded-lg shadow">
-                        </div>
 
+            </div>
+        </section>
+        <section class="py-6 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-1 gap-16">
+                <div class="md:col-start-1 md:row-start-1">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Currently Reading 📚</h2>
+                    <p>I'm currently reading <a href="https://www.amazon.com/Pragmatic-Programmer-Journeyman-Master/dp/020161622X" target="_blank" class="text-gray-500 hover:text-gray-700">The Pragmatic Programmer</a>. But I like to read practically everything that falls into my hands. Recently, I've started to track this in my <a href="https://www.goodreads.com/user/show/170543576-sara-valls" target="_blank" class="text-gray-500 hover:text-gray-700">Goodreads profile</a>. Reach out if you have any good recommendations for a book or if you would like to discuss anything related to it.</p>
+                </div>
+                <!-- My Latest Articles section now in its own row and aligned to the right -->
+                <div class="md:col-start-1 md:row-start-2 text-right">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">📝 My Medium Articles</h2>
+                    <ul id="medium-articles" class="list-disc pl-5 inline-block md:text-right text-left">
+                        <!-- Links to your Medium articles will go here -->
+                        <li><a href="https://medium.com/@saravalls/how-to-call-json-rpc-api-using-python-a6bbcbc081d0" target="_blank">How to call JSON-RPC API using Python</a></li>
+                        <!-- Add more as needed -->
+                    </ul>
+                </div>
             </div>
         </section>
     </main>
     <footer class="bg-white shadow mt-10 p-4 text-center">
         <p>Contact me at: <a href="mailto:svallsnavarro26@gmail.com" class="text-blue-500">svallsnavarro26@gmail.com</a></p>
         <div class="mt-4">
-            <a href="https://www.linkedin.com/in/sara-valls-navarro/" class="mx-2 text-gray-500 hover:text-gray-700">LinkedIn</a>
-            <a href="#" class="mx-2 text-gray-500 hover:text-gray-700">Twitter</a>
+            <a href="https://www.linkedin.com/in/sara-valls-navarro/" target="_blank" class="mx-2 text-gray-500 hover:text-gray-700">LinkedIn</a>
+            <a href="https://twitter.com/SaritaValls" target="_blank" class="mx-2 text-gray-500 hover:text-gray-700">Twitter</a>
+            <a href="https://github.com/svalls26" target="_blank" class="mx-2 text-gray-500 hover:text-gray-700">GitHub</a>
         </div>
     </footer>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const slideLeft = document.getElementById('slideLeft');
-            const slideRight = document.getElementById('slideRight');
-            const sliderContainer = document.getElementById('sliderContainer');
-            let slideIndex = 0;
-
-            function updateSlidePosition() {
-                const sliderWidth = sliderContainer.offsetWidth;
-                sliderContainer.style.transform = `translateX(-${slideIndex * sliderWidth}px)`;
-            }
-
-            slideLeft.addEventListener('click', () => {
-                if (slideIndex > 0) {
-                    slideIndex--;
-                    updateSlidePosition();
-                }
-            });
-
-            slideRight.addEventListener('click', () => {
-                if (slideIndex < sliderContainer.children.length - 1) {
-                    slideIndex++;
-                    updateSlidePosition();
-                }
-            });
-
-            updateSlidePosition(); // Initialize the slider position
+        document.getElementById('viewCVButton').addEventListener('click', function() {
+            window.open('https://www.linkedin.com/in/sara-valls-navarro/', '_blank');
         });
-    </script>
+        </script>
 </body>
 </html>
