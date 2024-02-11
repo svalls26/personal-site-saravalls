@@ -21,24 +21,26 @@
             <h1 class="text-3xl font-bold text-gray-900">Sara Valls</h1>
             <nav class="flex space-x-4 mt-4">
                 <a href="#" class="text-gray-600 hover:text-gray-900">Home</a>
-                <a href="#" class="text-gray-600 hover:text-gray-900">More</a>
+                <!-- <a href="#" class="text-gray-600 hover:text-gray-900">More</a> -->
             </nav>
         </div>
     </header>
-    <main class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-        <div class="flex flex-col md:flex-row justify-center items-center text-center pt-32 mb-32">
-            <div class="md:w-1/2 mt-12 md:mt-20">
+    <main class="mx-auto max-w-7xl py-6 px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col items-center justify-center pt-20 mb-32 md:flex-row md:justify-center md:items-center">
+            <div class="w-full md:w-1/2 text-center mt-4 md:mt-0 order-2 md:order-none">
+                <div class="flex justify-center">
+                    <img src="https://svalls26.github.io/images/me.png" alt="Sara" class="rounded-full shadow-lg h-48 w-48 md:h-60 md:w-60 object-cover">
+                </div>
                 <h2 class="text-4xl font-semibold mb-4">Hi! I'm Sara, Just a Girl in Tech</h2>
                 <p class="text-gray-700 mb-8">Thanks for visiting my website! My name is Sara and I'm just a girl in tech. I'm from Spain, but currently living in Switzerland and working as a Data Engineer. If you want to know me a little bit better, keep scrolling!</p>
-        <div class="flex justify-center md:justify-center">
-            <!-- Add an ID to your button -->
-            <button id="viewCVButton" class="bg-black text-white py-2 px-4 rounded">View CV</button>
-        </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center md:justify-center self-end">
-                <img src="https://svalls26.github.io/images/me.png" alt="Sara" class="rounded-full shadow-lg" style="width: 300px; height: 300px; object-fit: cover;">
+                <div class="flex justify-center">
+                    <button id="viewCVButton" class="bg-black text-white py-2 px-4 rounded">View CV</button>
+                </div>
             </div>
         </div>
+
+    
+    
         <!-- Slider Controls -->
         <section class="mb-32 p-10 bg-gray-100 rounded-lg shadow relative overflow-hidden">
             <div id="sliderContainer" class="flex overflow-hidden">
@@ -47,15 +49,15 @@
                     <h3 class="text-3xl font-semibold mb-6">Top 3 things I absolutely love</h3>
                     <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-20">
                         <div class="rounded-lg overflow-hidden">
-                            <img src="https://svalls26.github.io/images/brunch.jpg" alt="Matcha Latte" class="object-cover h-48 w-72 md:w-64 md:h-64 rounded-full">
+                            <img src="https://svalls26.github.io/images/brunch.jpg" alt="Matcha Latte" class="object-cover h-48 w-72 md:w-60 md:h-60 rounded-full">
                             <p class="text-xl mt-2">Matcha Latte</p>
                         </div>
                         <div class="rounded-lg overflow-hidden">
-                            <img src="https://svalls26.github.io/images/swiss.png" alt="Running around Geneva lake" class="object-cover h-48 w-72 md:w-64 md:h-64 rounded-full">
+                            <img src="https://svalls26.github.io/images/swiss.png" alt="Running around Geneva lake" class="object-cover h-48 w-72 md:w-60 md:h-60 rounded-full">
                             <p class="text-xl mt-2">Running around Geneva lake</p>
                         </div>
                         <div class="rounded-lg overflow-hidden">
-                            <img src="https://svalls26.github.io/images/obi.png" alt="My dog Obi" class="object-cover h-48 w-72 md:w-64 md:h-64 rounded-full">
+                            <img src="https://svalls26.github.io/images/obi.png" alt="My dog Obi" class="object-cover h-48 w-72 md:w-60 md:h-60 rounded-full">
                             <p class="text-xl mt-2">My dog Obi</p>
                         </div>
                     </div>
